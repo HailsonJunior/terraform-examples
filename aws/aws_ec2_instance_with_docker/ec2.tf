@@ -12,7 +12,6 @@ resource "aws_instance" "docker" {
 
     connection {
       user = "${var.ssh_username}"
-      private_key = "${file("${var.ssh_private_key_path}")}"
       agent = false
       host = "172.31.83.151"
     }

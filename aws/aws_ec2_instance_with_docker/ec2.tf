@@ -10,9 +10,16 @@ resource "aws_instance" "docker" {
       delete_on_termination = true
     }
 
+    connection {
+      user = "${var.ssh_username}"
+      private_key = "${file("${var.ssh_private_key_path}")}"
+      agent = false
+    }
+
     provisioner "remote-exec" {
       inline = [
-        "sudo hostnamectl set-hostname ${var.hostname}"
+        "sudo hostnamectl set-hostname ${var.hostname}",
+        "echo 127.0.0.1 ${var.hostname} | sudo tee -a /etc/hosts", # https://askubuntu.com/a/59517"
       ]
     }
 

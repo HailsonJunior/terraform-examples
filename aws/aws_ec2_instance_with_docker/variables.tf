@@ -40,7 +40,12 @@ variable "ssh_private_key_path" {
   default     = "ssh.private.key"
 }
 
+variable "ssh_username" {
+  description = "Default username"
+  default     = "ubuntu"
+}
+
 variable "ssh_public_key_path" {
-  description = "SSH public key file path, relativo ao projeto root do Terraform"
+  description = "SSH public key file path, relative to Terraform project root"
   default     = "ssh.public.key"
 }

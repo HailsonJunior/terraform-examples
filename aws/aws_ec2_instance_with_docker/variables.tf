@@ -4,8 +4,6 @@ locals {
     ${var.hostname}
     ${var.reprovision_trigger}
     ${var.ssh_username}
-    ${var.ssh_private_key_path}
-    ${var.ssh_public_key_path}
     # Trigger reprovision on file changes:
     ${file("${path.module}/install-docker.sh")}
   EOF

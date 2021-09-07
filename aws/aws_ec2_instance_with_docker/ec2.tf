@@ -11,8 +11,10 @@ resource "aws_instance" "docker" {
     }
 
     connection {
+      type = "ssh"
       user = "${var.ssh_username}"
-      private_key = "~./.ssh/id_rsa"
+      private_key = "${file("*.pem")}"
+      timeout = "2m"
       agent = false
     }
 

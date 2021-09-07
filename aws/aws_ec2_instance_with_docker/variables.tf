@@ -14,5 +14,5 @@ variable "type" {
 }
 
 variable "hostname" {
-    defauldefault = "docker"  
+    default = "docker"  
 }

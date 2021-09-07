@@ -10,5 +10,5 @@ variable "ami" {
 
 variable "type" {
     description = "Tipo da instância"
-    default = t2.micro  
+    default = "t2.micro"  
 }

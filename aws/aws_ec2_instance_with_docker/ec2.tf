@@ -12,13 +12,15 @@ resource "aws_instance" "docker" {
 
     connection {
       user = "${var.ssh_username}"
-      private_key = "${file("${var.ssh_private_key_path}")}"
+      private_key = "~./.ssh/id_rsa"
       agent = false
     }
 
     provisioner "remote-exec" {
       inline = [
         "sudo hostnamectl set-hostname ${var.hostname}",
+        "sudo apt -y update",
+        "sudo apt upgrade -y",
         "echo 127.0.0.1 ${var.hostname} | sudo tee -a /etc/hosts", # https://askubuntu.com/a/59517"
       ]
     }

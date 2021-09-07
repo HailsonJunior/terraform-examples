@@ -11,11 +11,10 @@ resource "aws_instance" "docker" {
     }
 
     connection {
-      type = "ssh"
       user = "${var.ssh_username}"
-      private_key = "${file("*.pem")}"
-      timeout = "2m"
+      private_key = "${file("${var.ssh_private_key_path}")}"
       agent = false
+      host = "172.31.83.151"
     }
 
     provisioner "remote-exec" {

@@ -13,6 +13,7 @@ resource "aws_instance" "docker" {
     connection {
       user = "${var.ssh_username}"
       agent = false
+      private_key = "${file("/home/hailson.junior/.ssh/id_rsa.pub")}"
       host = "172.31.83.151"
     }
 

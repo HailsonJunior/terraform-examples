@@ -4,11 +4,11 @@ variable "region" {
 }
 
 variable "ami" {
-    desdescription = "AMI da instância"
-    defauldefault = "ami-09e67e426f25ce0d7" 
+    description = "AMI da instância"
+    default = "ami-09e67e426f25ce0d7" 
 }
 
 variable "type" {
-    descridescription = "Tipo da instância"
-    dedefault = t2.micro  
+    description = "Tipo da instância"
+    default = t2.micro  
 }

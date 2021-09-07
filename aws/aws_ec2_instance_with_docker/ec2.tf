@@ -9,6 +9,17 @@ resource "aws_instance" "docker" {
       volume_type = "gp2"
       delete_on_termination = true
     }
+
+    provisioner "remote-exec" {
+      inline = [
+        "sudo hostnamectl set-hostname ${var.hostname}"
+      ]
+    }
+
+    provisioner "remote-exec" {
+      script = "${path.module}/install-docker.sh"    
+    }
+    
     tags = {
       "Name" = "Docker"
     }

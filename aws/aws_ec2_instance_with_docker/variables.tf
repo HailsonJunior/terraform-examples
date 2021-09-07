@@ -12,3 +12,7 @@ variable "type" {
     description = "Tipo da instância"
     default = "t2.micro"  
 }
+
+variable "hostname" {
+    defauldefault = "docker"  
+}

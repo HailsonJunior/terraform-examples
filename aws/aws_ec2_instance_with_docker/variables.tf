@@ -4,7 +4,7 @@ locals {
     ${var.hostname}
     ${var.reprovision_trigger}
     # Trigger reprovision on file changes:
-    ${file("${path.module}/provision-docker.sh")}
+    ${file("${path.module}/install-docker.sh")}
   EOF
 }
 

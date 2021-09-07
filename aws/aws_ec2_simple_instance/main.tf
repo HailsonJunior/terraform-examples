@@ -12,3 +12,19 @@ terraform {
 provider "aws" {
     region = var.region
 }
+
+module "ec2" {
+    source = "./ec2"
+}
+
+module "key_pair" {
+    source = "./key_pair"
+}
+
+module "output" {
+    source = "./output"
+}
+
+module "security_group" {
+    source = "./security_group"  
+}
